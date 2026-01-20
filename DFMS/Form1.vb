@@ -22,34 +22,24 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
 
-        'Simple validation
-        If txtUserName.Text = "" Or txtPassword.Text = "" Then
-            MessageBox.Show("Please enter username and password")
-            Exit Sub
-        End If
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
 
         Try
             OpenCon()
 
-            Dim cmd As New MySqlCommand(
-            "SELECT role FROM users WHERE username=@christina AND password=@123", con)
+            Dim sql As String = "SELECT role FROM users WHERE username=@u AND password=@p"
+            Dim cmd As New MySqlCommand(sql, con)
 
-            cmd.Parameters.AddWithValue("@christina", txtUserName.Text)
-            cmd.Parameters.AddWithValue("@123", txtPassword.Text)
+            cmd.Parameters.AddWithValue("@u", txtUserName.Text)
+            cmd.Parameters.AddWithValue("@p", txtPassword.Text)
 
             Dim dr As MySqlDataReader = cmd.ExecuteReader()
 
             If dr.Read() Then
-                Dim userRole As String = dr("role").ToString()
 
-                MessageBox.Show("Login successful")
 
-                'Open dashboard
-                Me.Show()
-                Me.Hide()
-
+                Dashboard.Show()
             Else
                 MessageBox.Show("Invalid username or password")
             End If
@@ -61,6 +51,7 @@ Public Class Form1
             MessageBox.Show(ex.Message)
         End Try
 
-
     End Sub
+
+
 End Class
