@@ -39,6 +39,7 @@ Partial Class UPDATE_FILE
         rdoNormal = New RadioButton()
         rdoUrgent = New RadioButton()
         txtDescription = New TextBox()
+        btnBack = New Button()
         SuspendLayout()
         ' 
         ' Label1
@@ -54,11 +55,11 @@ Partial Class UPDATE_FILE
         ' lblFile
         ' 
         lblFile.AutoSize = True
-        lblFile.Location = New Point(129, 109)
+        lblFile.Location = New Point(139, 109)
         lblFile.Name = "lblFile"
-        lblFile.Size = New Size(100, 25)
+        lblFile.Size = New Size(61, 25)
         lblFile.TabIndex = 1
-        lblFile.Text = "File ID/Title"
+        lblFile.Text = "File ID"
         ' 
         ' txtSearch
         ' 
@@ -123,7 +124,7 @@ Partial Class UPDATE_FILE
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(259, 475)
+        btnClear.Location = New Point(262, 475)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(112, 34)
         btnClear.TabIndex = 9
@@ -148,14 +149,15 @@ Partial Class UPDATE_FILE
         ' 
         ' txtFileTitle
         ' 
-        txtFileTitle.Location = New Point(259, 227)
+        txtFileTitle.Location = New Point(262, 227)
         txtFileTitle.Name = "txtFileTitle"
-        txtFileTitle.Size = New Size(376, 31)
+        txtFileTitle.Size = New Size(373, 31)
         txtFileTitle.TabIndex = 12
         ' 
         ' cboDepartment
         ' 
         cboDepartment.FormattingEnabled = True
+        cboDepartment.Items.AddRange(New Object() {"HRO", "FINANCE", "LAW", "EDUCATION", "ENVIRONMENT", "AGRICULTURE AND FISHING", "BUSINESS"})
         cboDepartment.Location = New Point(262, 285)
         cboDepartment.Name = "cboDepartment"
         cboDepartment.Size = New Size(373, 33)
@@ -190,12 +192,25 @@ Partial Class UPDATE_FILE
         txtDescription.Size = New Size(373, 31)
         txtDescription.TabIndex = 16
         ' 
+        ' btnBack
+        ' 
+        btnBack.BackColor = Color.White
+        btnBack.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBack.ForeColor = SystemColors.ActiveCaptionText
+        btnBack.Location = New Point(12, 12)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(78, 34)
+        btnBack.TabIndex = 17
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = False
+        ' 
         ' UPDATE_FILE
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(800, 562)
+        Controls.Add(btnBack)
         Controls.Add(txtDescription)
         Controls.Add(rdoUrgent)
         Controls.Add(rdoNormal)
@@ -236,4 +251,5 @@ Partial Class UPDATE_FILE
     Friend WithEvents rdoNormal As RadioButton
     Friend WithEvents rdoUrgent As RadioButton
     Friend WithEvents txtDescription As TextBox
+    Friend WithEvents btnBack As Button
 End Class

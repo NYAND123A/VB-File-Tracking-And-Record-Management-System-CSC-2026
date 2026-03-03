@@ -36,6 +36,9 @@ Partial Class FILE_REGISTRATION
         txtDescription = New TextBox()
         btnClear = New Button()
         btnSave = New Button()
+        btnBack = New Button()
+        lblStatus = New Label()
+        cboStatus = New ComboBox()
         SuspendLayout()
         ' 
         ' lblTitle
@@ -44,7 +47,7 @@ Partial Class FILE_REGISTRATION
         lblTitle.BackColor = SystemColors.InactiveCaption
         lblTitle.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.ForeColor = Color.Black
-        lblTitle.Location = New Point(249, 23)
+        lblTitle.Location = New Point(313, 23)
         lblTitle.Name = "lblTitle"
         lblTitle.Size = New Size(229, 25)
         lblTitle.TabIndex = 0
@@ -94,7 +97,7 @@ Partial Class FILE_REGISTRATION
         ' 
         lblDescription.AutoSize = True
         lblDescription.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblDescription.Location = New Point(84, 345)
+        lblDescription.Location = New Point(84, 307)
         lblDescription.Name = "lblDescription"
         lblDescription.Size = New Size(109, 25)
         lblDescription.TabIndex = 5
@@ -149,7 +152,7 @@ Partial Class FILE_REGISTRATION
         ' 
         ' txtDescription
         ' 
-        txtDescription.Location = New Point(249, 339)
+        txtDescription.Location = New Point(249, 307)
         txtDescription.Name = "txtDescription"
         txtDescription.Size = New Size(351, 31)
         txtDescription.TabIndex = 11
@@ -174,12 +177,46 @@ Partial Class FILE_REGISTRATION
         btnSave.Text = "Save"
         btnSave.UseVisualStyleBackColor = True
         ' 
+        ' btnBack
+        ' 
+        btnBack.BackColor = Color.White
+        btnBack.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBack.ForeColor = SystemColors.ActiveCaptionText
+        btnBack.Location = New Point(12, 12)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(78, 34)
+        btnBack.TabIndex = 18
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = False
+        ' 
+        ' lblStatus
+        ' 
+        lblStatus.AutoSize = True
+        lblStatus.Font = New Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblStatus.Location = New Point(85, 358)
+        lblStatus.Name = "lblStatus"
+        lblStatus.Size = New Size(65, 21)
+        lblStatus.TabIndex = 19
+        lblStatus.Text = "Status"
+        ' 
+        ' cboStatus
+        ' 
+        cboStatus.FormattingEnabled = True
+        cboStatus.Items.AddRange(New Object() {"Pending", "", "", "In Progress", "", "", "Completed"})
+        cboStatus.Location = New Point(249, 357)
+        cboStatus.Name = "cboStatus"
+        cboStatus.Size = New Size(351, 33)
+        cboStatus.TabIndex = 20
+        ' 
         ' FILE_REGISTRATION
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.InactiveCaption
+        BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(800, 516)
+        Controls.Add(cboStatus)
+        Controls.Add(lblStatus)
+        Controls.Add(btnBack)
         Controls.Add(btnSave)
         Controls.Add(btnClear)
         Controls.Add(txtDescription)
@@ -214,4 +251,7 @@ Partial Class FILE_REGISTRATION
     Friend WithEvents txtDescription As TextBox
     Friend WithEvents btnClear As Button
     Friend WithEvents btnSave As Button
+    Friend WithEvents btnBack As Button
+    Friend WithEvents lblStatus As Label
+    Friend WithEvents cboStatus As ComboBox
 End Class

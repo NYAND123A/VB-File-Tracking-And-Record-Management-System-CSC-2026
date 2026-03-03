@@ -1,7 +1,6 @@
-﻿
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-    Module DBConnection
+Module DBConnection
 
     'Public connection object (usable in all forms)
     Public con As New MySqlConnection(
@@ -9,18 +8,18 @@ Imports MySql.Data.MySqlClient
 
     'Open database connection
     Public Sub OpenCon()
-            If con.State = ConnectionState.Closed Then
-                con.Open()
-            End If
-        End Sub
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+    End Sub
 
-        'Close database connection
-        Public Sub CloseCon()
-            If con.State = ConnectionState.Open Then
-                con.Close()
-            End If
-        End Sub
+    'Close database connection
+    Public Sub CloseCon()
+        If con.State = ConnectionState.Open Then
+            con.Close()
+        End If
+    End Sub
 
-    End Module
+End Module
 
 
